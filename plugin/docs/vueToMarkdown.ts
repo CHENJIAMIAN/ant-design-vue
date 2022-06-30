@@ -15,6 +15,7 @@ export function createVueToMarkdownRenderFn(root: string = process.cwd()): any {
   return (src: string, file: string): MarkdownCompileResult => {
     const relativePath = slash(path.relative(root, file));
 
+    console.trace();
     const cached = cache.get(src);
     if (cached) {
       debug(`[cache hit] ${relativePath}`);
@@ -39,6 +40,8 @@ ${style}
       ignore: !docs,
     };
     cache.set(src, result);
+    console.log(result);
+
     return result;
   };
 }

@@ -7,7 +7,7 @@ import { additionalData } from './themeConfig';
 /**
  * @type {import('vite').UserConfig}
  */
-export default {
+const config = {
   resolve: {
     alias: {
       vue: 'vue/dist/vue.esm-bundler.js',
@@ -16,7 +16,7 @@ export default {
     },
   },
   server: {
-    host: true,
+    // host: true,
   },
   plugins: [
     vueJsx({
@@ -56,3 +56,6 @@ export default {
     },
   },
 };
+console.log(config);
+
+export default config;
